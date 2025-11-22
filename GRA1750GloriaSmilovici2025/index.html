@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Bowls | Fresh & Colorful</title>
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* FULL-SCREEN LETTUCE BACKGROUND */
+    body {
+      font-family: "Arial", sans-serif;
+      background: url("lettuce.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #22543D;
+      line-height: 1.5;
+      position: relative;
+      z-index: 0;
+    }
+
+    /* Soft overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(1px);
+      z-index: -1;
+    }
+
+    /* WRAPPER */
+    #wrapper {
+      max-width: 1080px;
+      margin: 40px auto;
+      background: #ffffff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.10);
+      padding: 0;
+    }
+
+    /* HEADER WITH CENTERED LOGO */
+    header {
+      text-align: center;
+      padding: 30px 20px 20px;
+      background: linear-gradient(135deg, #C7F9CC, #FFFFFF);
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    header img {
+      width: 220px;
+      display: block;
+      margin: 0 auto 12px;
+    }
+
+    header p {
+      color: #22543D;
+      opacity: 0.75;
+      font-size: 0.95rem;
+    }
+
+    main {
+      padding: 40px 50px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, #FFB5A7 0%, #FFE5D9 80%);
+      padding: 40px 30px;
+      text-align: center;
+      border-radius: 16px;
+      margin-bottom: 40px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      color: #22543D;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #22543D;
+      opacity: 0.85;
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* BUTTONS */
+    .button-row {
+      text-align: center;
+      margin: 30px 0 10px;
+    }
+
+    .button-row a {
+      display: inline-block;
+      text-decoration: none;
+      background: #80ED99;
+      color: #22543D;
+      padding: 12px 26px;
+      border-radius: 30px;
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: 0.2s ease;
+    }
+
+    .button-row a:hover {
+      background: #57d680;
+      transform: translateY(-3px);
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      font-size: 1.6rem;
+      margin: 35px 0 14px;
+      font-weight: 700;
+      color: #22543D;
+      border-bottom: 2px solid #C7F9CC;
+      padding-bottom: 6px;
+    }
+
+    /* MENU GRID */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    /* FULL-BLEED + ROUND CORNERS MENU CARDS */
+    .menu-item {
+      background: #ffffff;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+      transition: 0.25s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .menu-item .content {
+      padding: 20px 18px;
+    }
+
+    .menu-item h3 {
+      font-size: 1.2rem;
+      color: #22543D;
+      margin-bottom: 8px;
+    }
+
+    .menu-item p {
+      font-size: 0.95rem;
+      color: #4a4a4a;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: #57d680;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    /* INFO SECTIONS */
+    .info-section {
+      margin-top: 32px;
+    }
+
+    .info-section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+      color: #22543D;
+    }
+
+    .info-section p, ul li {
+      font-size: 1rem;
+      color: #4a4a4a;
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 6px;
+    }
+
+    ul li {
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      font-size: 0.75rem;
+      color: #777;
+      padding: 22px;
+      margin-top: 20px;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <!-- HEADER -->
+    <header>
+      <img src="logo-bloom.png" alt="Bloom Bowls Restaurant Logo">
+      <p>Fresh. Colorful. Nourishing.</p>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <div class="hero">
+        <h1>FRESH, COLORFUL BOWLS MADE DAILY.</h1>
+        <p>Wholesome ingredients. Bold flavors. A menu designed to brighten your day.</p>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="button-row">
+        <a href="#">Order Online</a>
+        <a href="#">Full Menu</a>
+      </div>
+
+      <!-- FEATURED MENU -->
+      <h2 class="section-title">FEATURED BOWLS</h2>
+
+      <div class="menu-grid">
+
+        <article class="menu-item">
+          <img src="https://thesidesmith.com/wp-content/uploads/2024/07/cucumber-edamame-salad-3.jpg">
+          <div class="content">
+            <h3>Green Goddess Bowl</h3>
+            <p>Edamame, cucumber, avocado, greens, lime dressing.</p>
+            <div class="price">$11.95</div>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="https://www.lastingredient.com/wp-content/uploads/2021/08/quinoa-chickpea-salad1.jpg">
+          <div class="content">
+            <h3>Protein Power Bowl</h3>
+            <p>Chicken, quinoa, kale, chickpeas, tahini.</p>
+            <div class="price">$12.95</div>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=70">
+          <div class="content">
+            <h3>Berry Bliss Bowl</h3>
+            <p>Spinach, strawberries, goat cheese, almonds.</p>
+            <div class="price">$10.95</div>
+          </div>
+        </article>
+
+        <article class="menu-item">
+          <img src="https://www.floatingkitchen.net/wp-content/uploads/2024/03/Veggie-Burger-Bowls-1-480x480.jpg">
+          <div class="content">
+            <h3>Burger Bowl</h3>
+            <p>Plant-based crumble, quinoa, tomato, pickles, smoky sauce.</p>
+            <div class="price">$12.50</div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- CONTACT / INFO -->
+      <section class="info-section">
+        <h2>Address & Phone</h2>
+        <p>123 Green Street, Miami, FL<br>(305) 439-8877</p>
+      </section>
+
+      <section class="info-section">
+        <h2>Hours</h2>
+        <p>Mon–Thu: 11am–9pm<br>Fri–Sat: 11am–10pm<br>Sun: 11am–8pm</p>
+      </section>
+
+      <section class="info-section">
+        <h2>Socials</h2>
+        <ul>
+          <li>Instagram: @bloombowls</li>
+          <li>Facebook: /bloombowls</li>
+        </ul>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025, Gloria Smilovici. This is a fictitious web page created solely for educational purposes.
+    </footer>
+  </div>
+</body>
+</html>
